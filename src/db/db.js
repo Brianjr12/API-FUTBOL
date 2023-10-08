@@ -4,5 +4,5 @@ export const pool = createPool({
   user: "root",
   password: "1234",
   port: 3306,
-  database:"api_teams_db"
+  database:"api_futbol_db"
 })
