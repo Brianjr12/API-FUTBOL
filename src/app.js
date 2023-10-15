@@ -1,12 +1,15 @@
-import express from 'express'
-import morgan from 'morgan'
-import router from './routes/appRoutes.js'
+import express from "express";
+import routes from './routes/appRoutes.js'
+const app = express();
+app.use(express.json());
 
-const app = express()
-const port = 3000
-app.use(morgan("dev"))
-app.use(express.json())
+//*routes
+app.use("/api", routes.routerTeams);
 
+app.use((req, res, next) => {
+  res.status(404).json({
+    message: "Requested path not found",
+  });
+});
 
-app.listen(port, () => console.log(`app listening on port ${port}!`))
-app.use("/api",router)
+export default app;
