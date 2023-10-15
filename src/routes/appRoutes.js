@@ -1,11 +1,8 @@
-import { Router } from "express";
-import {getAllTeams,getTeamById,getTeamAndPlayers,getTeamAndCompetitionsTrophies} from '../controllers/teamsController/teamsControllers.js'
-const router = Router();
+import routerTeams from '../controllers/teamsController/teamsRoutes.js'
 
-router.get("/teams", getAllTeams);
-router.get("/team/:id", getTeamById);
-router.get("/team/players/:id", getTeamAndPlayers);
-router.get("/team/competitions/:id", getTeamAndCompetitionsTrophies);
+const routes = {
+  routerTeams
+}
 
 
-export default router;
+export default routes;
